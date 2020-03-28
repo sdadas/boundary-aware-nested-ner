@@ -21,21 +21,21 @@ from eval import evaluate_e2e
 import pdb
 pdb.set_trace()
 
-MAX_REGION = 10
+MAX_REGION = 15
 EARLY_STOP = 5
 LR = 0.0005
 BATCH_SIZE = 50 
 MAX_GRAD_NORM = 5
-N_TAGS = 12
-TAG_WEIGHTS = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+N_TAGS = 112
+TAG_WEIGHTS = [1] * 112
 FREEZE_WV = False
 LOG_PER_BATCH = 10
 
 PRETRAINED_URL = from_project_root("data/embedding/PubMed-shuffle-win-30.bin")
-EMBED_URL = from_project_root("data/Germ/embeddings.npy")
-TRAIN_URL = from_project_root("data/Germ/germ.train.iob2")
-DEV_URL = from_project_root("data/Germ/germ.dev.iob2")
-TEST_URL = from_project_root("data/Germ/germ.test.iob2")
+EMBED_URL = from_project_root("data/nne/embeddings.npy")
+TRAIN_URL = from_project_root("data/nne/nne.train.iob2")
+DEV_URL = from_project_root("data/nne/nne.dev.iob2")
+TEST_URL = from_project_root("data/nne/nne.test.iob2")
 
 
 def train_end2end(n_epochs=80,
