@@ -90,7 +90,7 @@ def evaluate_e2e(model, data_url, bsl_model=None):
                                     target_names=['out-entity', 'head-entity', 'tail-entity','in-entity'], digits=6))
 
         print("region classification result:")
-        print(classification_report(region_true_list, region_pred_list,
+        print(classification_report(region_true_list, region_pred_list, labels=list(set(region_true_list)),
                                     target_names=list(dataset.label_ids)[:345], digits=6))
         ret = dict()
         tp = 0
