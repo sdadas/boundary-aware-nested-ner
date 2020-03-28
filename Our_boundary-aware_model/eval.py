@@ -91,7 +91,7 @@ def evaluate_e2e(model, data_url, bsl_model=None):
 
         print("region classification result:")
         print(classification_report(region_true_list, region_pred_list,
-                                    target_names=list(dataset.label_ids)[:12], digits=6))
+                                    target_names=list(dataset.label_ids)[:345], digits=6))
         ret = dict()
         tp = 0
         for pv, tv in zip(region_pred_list, region_true_list):
@@ -108,7 +108,7 @@ def evaluate_e2e(model, data_url, bsl_model=None):
 
 def main():
     model_url = from_project_root("data/model/best_model.pt")
-    test_url = from_project_root("data/Germ/germ.test.iob2")
+    test_url = from_project_root("data/nne/nne.test.iob2")
     model = torch.load(model_url)
     evaluate_e2e(model, test_url)
     pass
