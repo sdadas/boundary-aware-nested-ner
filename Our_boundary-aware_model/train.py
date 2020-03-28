@@ -18,9 +18,6 @@ from dataset import End2EndDataset, prepare_vocab
 from model import End2EndModel
 from eval import evaluate_e2e
 
-import pdb
-pdb.set_trace()
-
 MAX_REGION = 15
 EARLY_STOP = 5
 LR = 0.0005
